@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forEach DOM</title>
+</head>
+<body>
+	<div class='one'></div>
+	<div class='two'></div>
+	<div class='three'></div>
+	<script type="text/javascript">
+	var div = document.getElementsByTagName('div');
+	Array.prototype.forEach.call(div,get);
+	function get(v){
+		alert(v.className);
+	}
+	</script>
+</body>
+</html>

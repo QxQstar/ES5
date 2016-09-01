@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+	p{
+		color:blue;
+		font-size: 34px;
+	}
+	</style>
+</head>
+<body>
+	<p id='text'></p>
+	<script type="text/javascript">
+	function getTime(){
+		var now = new Date();
+		var end = new Date(now.getFullYear()+1,0,1);
+		var glapS = Math.floor((end.getTime() - now.getTime())/1000);
+		var S = Math.floor(glapS%60);
+		var M = Math.floor(glapS/60%60);
+		var H = Math.floor(glapS/(60*60)%24);
+		var D = Math.floor(glapS/(24*60*60)%30);
+		var Mo = Math.floor(glapS/(30*24*60*60)%12);
+		var F = Math.floor(glapS/(12*30*24*60*60)%1);
+		return "距离" + end.getFullYear() + "还有"+F+"年"+Mo+"月"+D+"时"+M+"分"+S+"秒";
+	}
+	var text = document.getElementById('text');
+	 text.innerHTML = getTime();
+	setInterval(function(){
+		text.innerHTML = getTime();
+	},1000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getAge</title>
+</head>
+<body>
+	<script type="text/javascript">
+	getAge()
+	function getAge(){
+		var brithDay = new Date(1995,4,1);
+		var now = new Date();
+		var age = now.getFullYear() - brithDay.getFullYear();
+		brithDay.setFullYear(now.getFullYear());
+		if(now < brithDay){
+			age--;
+		}
+		alert("you are " +age+" years old");
+	}
+	</script>
+</body>
+</html>

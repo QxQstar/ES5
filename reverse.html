@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reverse NodeList</title>
+</head>
+<body>
+	<ul id='list'>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+		<li>five</li>
+		<li>six</li>
+	</ul>
+	<script type="text/javascript">
+		var list = document.getElementById('list');
+		var item = list.getElementsByTagName('li');
+		var frag = document.createDocumentFragment();
+		for(var i = 0,len = item.length;i<len;i++){
+			frag.appendChild(item[len-1-i]);
+		}
+		list.appendChild(frag);
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getPrototypeOf</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var arr = [];
+	var now = new Date();
+	var e  = /\./;
+	alert(Object.prototype.toString.call(e));
+	function person(){
+		this.name = "ming";
+	}
+	var one = new person();
+	//Object.getPrototypeOf(one):得到one的原型
+	//alert(Object.getPrototypeOf(one) == person.prototype);
+	//alert(Object.getPrototypeOf(one).isPrototypeOf(one));
+	function check(ele){
+		var str = Object.prototype.toString.call(ele);
+		str.replace(/(\[|\]|Object)/,"")
+		alert(str);
+	}
+	</script>
+</body>
+</html>

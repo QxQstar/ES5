@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//基础方法
+	var arr = [0,1,2,3];
+	var newArr = arr.filter(function(value){
+		return value;
+	});
+	//与正则表达式结合
+	var obj = [
+		{name:"xiaomi",age:12,sex:"m",email:"zhang@163.com"},
+		{name:"xiaoyu",age:11,sex:"m",email:"345@qq.com"}
+	];
+	var emailArr = obj.map(function(value){
+						return value.email;
+						})
+						.filter(function(email){
+							return /163/.test(email);
+						});
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>execURL</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var url = "http://ftp.bai.com:09/jkn/kk.html?jj=4&kk=mi#ji";
+	var reg = /(([^:]+:)\/\/(([^:?\/#]+)(:\d*)?))(\/[^?#]*)?(\?[^#]*)?(#.*)?/;
+	var arr = ["url","origin","prototol","host","hostname","port","pathname","search","hash"];
+	function getURL(url,arr){
+		var urlObj = {}
+		var match = url.match(reg);
+		for(var i = 0,len =	arr.length;i<len;i++){
+			urlObj[arr[i]] = match[i];
+		}
+		return urlObj;
+	}
+	var urlObj = getURL(url,arr);
+	console.log(urlObj);
+	</script>
+</body>
+</html>

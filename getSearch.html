@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getSearch</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var search = "?kk=23&jj=12&kk=min&qin=l"
+	function getSearch(search){
+		var result = {};
+		if(typeof search == "string" && search.length > 0){
+			if(search.charAt(0) == "?"){
+				search = search.substr(1);
+			}
+			var items = search.split("&");
+			for(var i = 0,len = items.length;i<len;i++){
+				var key = items[i].split("=")[0];
+				var vaule = items[i].split("=")[1];
+				key = decodeURIComponent(key);
+				vaule = decodeURIComponent(vaule);
+				if(key in result){
+					if(result[key] instanceof Array){
+						result[key].push(vaule);
+					}else{
+						var arr = [result[key]];
+						arr.push(vaule);
+						result[key] = arr;
+					}
+				}else{
+					result[key] = vaule;
+				}
+			}
+		}
+		return result;
+	}
+	var seaObj = getSearch(search);
+	console.log(seaObj);
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 基础用法
+	var arr = [1,2,3,4,5],newArr = [];
+	if(typeof Array.prototype.map == "function"){
+		newArr = arr.map(callBack);
+	}else{
+		for(var i = 0;i<arr.length;i++){
+			newArr.push(arr[i]*arr[i]);
+		}
+	}
+	function callBack(value,index,arr){
+		return value*value;
+	}
+	//对象数组
+	var objArr = [
+		{name:"小明",age:12,sex:"男",tel:"12569745654"},
+		{name:"小红",age:13,sex:"女",tel:"129745654"},
+		{name:"小请",age:15,sex:"男",tel:"9745654"},
+		{name:"小李",age:11,sex:"男",tel:"12745654"}
+	];
+	var telArr = objArr.map(getTel);
+	function getTel(value){
+		return value.tel;
+	}
+	alert(telArr);
+	</script>
+</body>
+</html>
